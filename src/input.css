@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Epilogue";
+  src: url("./Assets/Fonts/Epilogue-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 100 900;
+}
+
+/* colors */
+@theme {
+  --color-White: #ffffff;
+  --color-Black: #000000;
+  --color-Gray-950: #151515;
+  --color-Gray-500: #686868;
+  --color-Gray-400: #ADADAD;
+  --color-Blue-200: #D8D8D8;
+  --color-Green-50: #FAFAFA;
+  --color-Blue-400: #4BB1DA;
+  --color-Violet-500: #726CEE;
+  --color-Yellow-300: #EDD556;
+  --color-Purple-600: #8E4CB6;
+
+  --font-Public-Sans: "Epilogue";
+  --breakpoint-*: initial;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1280px;
+  /* Easing */
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Typography */
+
+@layer utilities {
+  .text-1 {
+    font-size: 2.25rem;
+    line-height: 1;
+    letter-spacing: -0.0625rem;
+    font-family: var(--font-Epilogue, "Epilogue", monospace);
+    font-weight: 700;
+  }
+
+  @media (min-width: 48rem) {
+    .text-1 {
+      font-size: 4rem;
+      letter-spacing: -0.0625rem;
+    }
+    @media (min-width: 80rem) {
+    .text-1 {
+      font-size: 5rem;
+      letter-spacing: -0.0625rem;
+    }
+  }
+
+  .text-2 {
+    font-size: 4rem;
+    line-height: 1;
+    letter-spacing: -0.0625rem;
+    font-family: var(--font-Epilogue, "Epilogue", monospace);
+    font-weight: 700;
+  }
+  
+  }
+
+  .text-3 {
+    font-size: 2.5rem;
+    line-height: 1;
+    letter-spacing: -0.0625rem;
+    font-family: var(--font-Epilogue, "Epilogue", monospace);
+    font-weight: 700;
+  }
+
+  .text-4-Bold {
+    font-size: 1.125rem;
+    line-height: 1.55;
+    letter-spacing: -0.015625rem;
+    font-family: var(--font-Epilogue, "Epilogue", monospace);
+    font-weight: 700;
+  }
+  .text-4-Medium {
+    font-size: 1.125rem;
+    line-height: 1.55;
+    letter-spacing: 0;
+    font-family: var(--font-Epilogue, "Epilogue", monospace);
+    font-weight: 500;
+  }
+
+  .text-5-Bold {
+    font-size: 1rem;
+    line-height: 1.55;
+    letter-spacing: 0.015625rem;
+    font-family: var(--font-Epilogue, "Epilogue", monospace);
+    font-weight: 700;
+  }
+  
+  .text-5-Medium {
+    font-size: 1rem;
+    line-height: 1.55;
+    letter-spacing: 0;
+    font-family: var(--font-Epilogue, "Epilogue", monospace);
+    font-weight: 500;
+  }
+  
+  }
+
+  .text-6 {
+    font-size: 0.875rem;
+    line-height: 1.15;
+    letter-spacing: 0;
+    font-family: var(--font-Epilogue, "Epilogue", monospace);
+    font-weight: 500;
+  }
+
+
+
+/* nav-menus */
+
+@layer utilities {
+  .text-hover {
+    @apply text-Gray-500 hover:text-Gray-950 transition-colors ease-in-out duration-300 cursor-pointer;
+  }
+}
