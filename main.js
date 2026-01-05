@@ -1,6 +1,4 @@
-// main.js
 
-// ==================== MOBILE MENU TOGGLE ====================
 const menuBtn = document.getElementById("menuBtn");
 const menuIcon = document.getElementById("menuIcon");
 const sidebar = document.getElementById("sidebar");
@@ -8,7 +6,7 @@ const overlay = document.getElementById("overlay");
 
 let mobileOpen = false;
 
-// Force hidden on load
+
 sidebar.classList.add("translate-x-[100vw]");
 overlay.classList.add("invisible", "opacity-0");
 
@@ -29,7 +27,7 @@ overlay.addEventListener("click", () => {
   if (mobileOpen) menuBtn.click();
 });
 
-// ==================== CLOSE ALL DROPDOWNS ====================
+
 function closeAllDropdowns() {
   document.querySelectorAll(".dropdown-btn").forEach((btn) => {
     btn.setAttribute("aria-expanded", "false");
@@ -37,7 +35,7 @@ function closeAllDropdowns() {
 
     const arrow = btn.querySelector(".dropdown-arrow");
     if (arrow) {
-      arrow.classList.remove("rotate-180"); // Ensure closed state
+      arrow.classList.remove("rotate-180"); 
     }
 
     const menu = btn.closest("li")?.querySelector('[role="menu"]');
@@ -52,7 +50,7 @@ function closeAllDropdowns() {
   });
 }
 
-// Close on click outside
+
 document.addEventListener("click", (e) => {
   if (
     !e.target.closest(".dropdown-btn") &&
@@ -62,7 +60,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// ==================== DROPDOWN HANDLER ====================
+
 document.querySelectorAll(".dropdown-btn").forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.stopPropagation();
@@ -73,21 +71,21 @@ document.querySelectorAll(".dropdown-btn").forEach((btn) => {
 
     if (!menu) return;
 
-    // Always close all first
+    
     closeAllDropdowns();
 
-    // If it was closed, open this one
+   
     if (!isOpen) {
       btn.setAttribute("aria-expanded", "true");
       btn.setAttribute("data-state", "open");
       menu.setAttribute("data-state", "open");
 
-      // THIS IS THE KEY FIX: Toggle arrow rotation properly
+      
       if (arrow) {
         arrow.classList.add("rotate-180");
       }
 
-      // Mobile height expand
+     
       if (sidebar.contains(btn)) {
         menu.classList.remove("py-0", "h-0", "overflow-hidden");
         menu.classList.add("py-4");
